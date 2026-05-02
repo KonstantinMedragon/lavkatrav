@@ -1,117 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Лавка трав — чайные напитки</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #ffffff;
+            font-family: 'TT Norms', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        .herbal-tea-block {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #ffffff;
+        }
+
+        .block-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: #1e1e1e;
+        }
+
+        .cards-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .tea-card {
+            display: block;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            border-radius: 30px;
+            background-color: #f0f0f0;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            overflow: hidden;
+            aspect-ratio: 16 / 9;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .tea-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 100%);
+            border-radius: 30px;
+        }
+
+        .card-text {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            font-size: 22px;
+            font-weight: 600;
+            color: #ffffff;
+            text-align: left;
+            z-index: 2;
+            letter-spacing: 0.5px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        /* Десктоп: три карточки в ряд */
+        @media (min-width: 768px) {
+            .cards-wrapper {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .tea-card {
+                flex: 1;
+                aspect-ratio: 4 / 3;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .block-title {
+                font-size: 24px;
+            }
+            .card-text {
+                font-size: 18px;
+                bottom: 15px;
+                left: 15px;
+            }
+            .herbal-tea-block {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
 <div class="herbal-tea-block">
-  <h2 class="block-title">Чайные напитки из трав и минералов</h2>
-  <div class="cards-wrapper">
-    <!-- Карточка 1: Тибетская рецептура -->
-    <a href="#" class="tea-card" style="background-image: url('https://raw.githubusercontent.com/ваш-логин/ваш-репозиторий/main/tibet.jpg');">
-      <div class="card-overlay"></div>
-      <div class="card-text">Тибетская рецептура</div>
-    </a>
-    <!-- Карточка 2: Русское травничество -->
-    <a href="#" class="tea-card" style="background-image: url('https://raw.githubusercontent.com/ваш-логин/ваш-репозиторий/main/rus.jpg');">
-      <div class="card-overlay"></div>
-      <div class="card-text">Русское травничество</div>
-    </a>
-    <!-- Карточка 3: Авторские рецепты -->
-    <a href="#" class="tea-card" style="background-image: url('https://raw.githubusercontent.com/ваш-логин/ваш-репозиторий/main/auth.jpg');">
-      <div class="card-overlay"></div>
-      <div class="card-text">Авторские рецепты</div>
-    </a>
-  </div>
+    <h2 class="block-title">Чайные напитки из трав и минералов</h2>
+    <div class="cards-wrapper">
+        <!-- Тибетская рецептура -->
+        <a href="#" class="tea-card" style="background-image: url('tibet.jpg');">
+            <div class="card-overlay"></div>
+            <div class="card-text">Тибетская рецептура</div>
+        </a>
+        <!-- Русское травничество -->
+        <a href="#" class="tea-card" style="background-image: url('rus.jpg');">
+            <div class="card-overlay"></div>
+            <div class="card-text">Русское травничество</div>
+        </a>
+        <!-- Авторские рецепты -->
+        <a href="#" class="tea-card" style="background-image: url('auth.jpg');">
+            <div class="card-overlay"></div>
+            <div class="card-text">Авторские рецепты</div>
+        </a>
+    </div>
 </div>
-
-<style>
-.herbal-tea-block {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  font-family: 'TT Norms', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  background-color: #ffffff; /* можно изменить под фон страницы */
-}
-
-.block-title {
-  text-align: center;
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 40px;
-  color: #1e1e1e;
-}
-
-.cards-wrapper {
-  display: flex;
-  flex-direction: column;  /* на телефоне вертикально */
-  gap: 30px;
-}
-
-/* Стиль одной карточки-кнопки */
-.tea-card {
-  display: block;
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  border-radius: 30px;
-  background-color: #f0f0f0; /* цвет фона, если картинка не загрузилась */
-  text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  overflow: hidden;
-  aspect-ratio: 16 / 9;    /* пропорции 16:9, карточки будут одинаковой высоты */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-}
-
-.tea-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-/* Тёмная подложка для читаемости текста */
-.card-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 100%);
-  border-radius: 30px;
-}
-
-/* Текст внутри карточки */
-.card-text {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-  font-size: 22px;
-  font-weight: 600;
-  color: #ffffff;
-  text-align: left;
-  z-index: 2;
-  letter-spacing: 0.5px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-}
-
-/* Десктоп: три карточки в строку */
-@media (min-width: 768px) {
-  .cards-wrapper {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .tea-card {
-    flex: 1;
-    aspect-ratio: 4 / 3;   /* чуть выше для десктопа */
-  }
-}
-
-/* Очень маленькие телефоны – уменьшаем шрифт и отступы */
-@media (max-width: 480px) {
-  .block-title {
-    font-size: 24px;
-  }
-  .card-text {
-    font-size: 18px;
-    bottom: 15px;
-    left: 15px;
-  }
-  .herbal-tea-block {
-    padding: 20px 15px;
-  }
-}
-</style>
+</body>
+</html>
