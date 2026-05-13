@@ -1,0 +1,107 @@
+<div class="hero-block">
+  <div class="hero-logo">
+    <img src="https://optim.tildacdn.one/tild6162-6564-4536-b734-363134363735/-/format/webp/logo1.jpg.webp" alt="Логотип Лавка Трав">
+  </div>
+  <div class="hero-text">
+    <h1>травяные чаи и сборы по древним<br>тибетским рецептам</h1>
+    <address>адрес</address>
+  </div>
+</div>
+
+<style>
+  .hero-block {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+    text-align: left;
+  }
+
+  .hero-logo {
+    flex: 0 0 auto;
+    max-width: 120px;
+  }
+
+  .hero-logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .hero-text {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .hero-text h1 {
+    font-family: 'TT Norms', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    color: #1e1e1e;
+  }
+
+  .hero-text address {
+    font-family: 'TT Norms', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-size: 1rem;
+    color: #5a5a5a;
+    margin-top: 0;
+  }
+
+  /* Десктоп (шире 768px) — логотип слева, текст справа в строку */
+  @media (min-width: 769px) {
+    .hero-block {
+      flex-direction: row;
+    }
+  }
+
+  /* Мобильные (до 768px) — логотип слева, текст справа, в одну строку */
+  @media (max-width: 768px) {
+    .hero-block {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: flex-start;
+      gap: 15px;
+      padding: 30px 15px;
+    }
+    .hero-logo {
+      max-width: 70px;
+      flex-shrink: 0;
+    }
+    .hero-text {
+      flex: 1;
+      min-width: 0; /* чтобы текст не вылезал */
+    }
+    .hero-text h1 {
+      font-size: 1rem;
+      line-height: 1.3;
+      margin-bottom: 0.2rem;
+    }
+    .hero-text address {
+      font-size: 0.75rem;
+    }
+    /* убираем <br> на мобильных, чтобы текст не ломался в три строки? Оставим как есть, но можно заменить */
+    .hero-text h1 br {
+      display: none; /* убираем перенос на мобильных, будет в одну строку, но если нужно две — оставьте */
+    }
+  }
+
+  /* Очень маленькие экраны (до 480px) — дополнительная оптимизация */
+  @media (max-width: 480px) {
+    .hero-logo {
+      max-width: 55px;
+    }
+    .hero-text h1 {
+      font-size: 0.9rem;
+    }
+    .hero-text address {
+      font-size: 0.7rem;
+    }
+  }
+</style>
